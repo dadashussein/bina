@@ -7,10 +7,22 @@ import { HousingLocation } from '../housinglocation';
   selector: 'app-housing-location',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './housing-location.component.html',
+  template: `
+    <section class="listing">
+      <img
+        class="listing-photo"
+        [src]="housingLocation.photo"
+        alt="Exterior photo of {{ housingLocation.name }}"
+        crossorigin
+      />
+      <h2 class="listing-heading">{{ housingLocation.name }}</h2>
+      <p class="listing-location">{{ housingLocation.city }}, {{ housingLocation.state }}</p>
+    </section>
+  `,
   styleUrl: './housing-location.component.css'
 })
 export class HousingLocationComponent {
 
   @Input() housingLocation!: HousingLocation;
+  
 }

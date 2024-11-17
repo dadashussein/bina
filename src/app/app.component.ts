@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent],
+  imports: [HomeComponent],
   template: `
     <main>
     <header class="brand-name">
@@ -15,7 +15,7 @@ import { HomeComponent } from './home/home.component';
       <section class="content">
         <app-home></app-home>
       </section>
-      <router-outlet></router-outlet>
+      
     </main>
   `
   ,
